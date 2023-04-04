@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1625790152792158820}
   - component: {fileID: 4416578740442051570}
+  - component: {fileID: 1194655287191980728}
   m_Layer: 0
   m_Name: Trunk
   m_TagString: Untagged
@@ -83,4 +84,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!70 &1194655287191980728
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4568696487554353229}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.03}
+  m_Size: {x: 0.6, y: 0.25}
+  m_Direction: 1

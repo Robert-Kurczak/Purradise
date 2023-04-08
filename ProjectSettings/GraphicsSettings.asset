@@ -46,8 +46,8 @@ GraphicsSettings:
     type: 0}
   m_CustomRenderPipeline: {fileID: 11400000, guid: 665072d3994004544bb27f2c5fca09c4,
     type: 2}
-  m_TransparencySortMode: 0
-  m_TransparencySortAxis: {x: 0, y: 0, z: 1}
+  m_TransparencySortMode: 3
+  m_TransparencySortAxis: {x: 0, y: 1, z: 0}
   m_DefaultRenderingPath: 1
   m_DefaultMobileRenderingPath: 1
   m_TierSettings: []
@@ -71,3 +71,5 @@ GraphicsSettings:
   m_SRPDefaultSettings:
     UnityEngine.Rendering.Universal.UniversalRenderPipeline: {fileID: 11400000, guid: bff77cef94c4f6445bd2dd50cefca70f,
       type: 2}
+  m_CameraRelativeLightCulling: 0
+  m_CameraRelativeShadowCulling: 0

@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 2423963833741091956}
   - component: {fileID: 1685215160473710641}
   - component: {fileID: 2230929607918117093}
+  - component: {fileID: 2463562639367761478}
   m_Layer: 0
   m_Name: AppleTree
   m_TagString: Untagged
@@ -255,6 +256,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OptionsCanvas: {fileID: 1764956258383495526}
+--- !u!114 &2463562639367761478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3151634681310405615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14388f49ea13d246963145a1c4b04b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 1
 --- !u!1 &4403323864981413174
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,4 +510,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6089054427460313365}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2463562639367761478}
+        m_TargetAssemblyTypeName: ChopOptionHandler, Assembly-CSharp
+        m_MethodName: handleClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

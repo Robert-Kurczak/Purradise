@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2578217098984719522}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5255898336331499031}
+        m_TargetAssemblyTypeName: ChopOptionHandler, Assembly-CSharp
+        m_MethodName: handleClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3790492376100659488
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +246,9 @@ GameObject:
   - component: {fileID: 4073513950437640999}
   - component: {fileID: -8611875868112518505}
   - component: {fileID: 88550674508850182}
+  - component: {fileID: -5716601837265700544}
   - component: {fileID: 1271480341061174317}
+  - component: {fileID: 5255898336331499031}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -250,7 +264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5965098688930973626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.8385797, y: 5.3393064, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -362,6 +376,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.86}
   m_EdgeRadius: 0
+--- !u!114 &-5716601837265700544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5965098688930973626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f678aec6e663bcb4bab3f426bcc074b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trunk: {fileID: 4568696487554353229, guid: 65ad30b11a254724e807cc0f1c9d8c03, type: 3}
+  dropItem: {fileID: 3524888154284532747, guid: 86c474c869b8bfb4cb034d720a7c1af6,
+    type: 3}
 --- !u!114 &1271480341061174317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,3 +404,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OptionsCanvas: {fileID: 3790492376100659488}
+--- !u!114 &5255898336331499031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5965098688930973626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14388f49ea13d246963145a1c4b04b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  approachDistance: 1
+  treeDestroyer: {fileID: -5716601837265700544}

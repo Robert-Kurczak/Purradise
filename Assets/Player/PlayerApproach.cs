@@ -1,8 +1,10 @@
 using UnityEngine;
+using System;
 
 public class PlayerApproach : MonoBehaviour{
     public PlayerMovement playerMovement;
     public PlayerAnimation playerAnimation;
+    public event Action<Vector2> OnReachedTarget;
 
     private bool isApproaching;
     private Vector2 targetPosition;
@@ -27,6 +29,9 @@ public class PlayerApproach : MonoBehaviour{
             }
             //Target reached
             else{
+                //Notify that player reached choosen target
+                OnReachedTarget?.Invoke(targetPosition - (Vector2)transform.position);
+
                 playerMovement.enabled = true;
                 isApproaching = false;
             }

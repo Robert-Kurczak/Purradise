@@ -7,12 +7,18 @@ public class ChopOptionHandler : MonoBehaviour{
     private PlayerApproach playerApproach;
     private PlayerAnimation playerAnimation;
 
-    private void chopTree(){
+    private void choppingEnds(){
+        //Enabling player movement
+        PlayerSingleton.Instance.gameObject.GetComponent<PlayerMovement>().enabled = true;
+
         treeDestroyer.destroy();
     }
 
     private void performChopAction(Vector2 direction){
-        playerAnimation.OnChoppingEnd += chopTree;
+        //Disabling player movement
+        PlayerSingleton.Instance.gameObject.GetComponent<PlayerMovement>().enabled = false;
+
+        playerAnimation.OnChoppingEnd += choppingEnds;
 
         if(direction.x < 0) playerAnimation.chopLeft(5);
         else                playerAnimation.chopRight(5);
@@ -26,7 +32,7 @@ public class ChopOptionHandler : MonoBehaviour{
 
     void OnDestroy(){
         //Removing listeners
-        playerAnimation.OnChoppingEnd -= chopTree;
+        playerAnimation.OnChoppingEnd -= choppingEnds;
         playerApproach.OnReachedTarget -= performChopAction;
     }
 

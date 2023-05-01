@@ -18,7 +18,7 @@ public class ChopOptionHandler : MonoBehaviour{
         else                playerAnimation.chopRight(5);
     }
 
-    //Caled by UIButton
+    //Called by UIButton
     public void handleClick(){
         playerApproach.OnReachedTarget += performChopAction;
         playerApproach.approach(transform.position, approachDistance);
@@ -31,8 +31,7 @@ public class ChopOptionHandler : MonoBehaviour{
     }
 
     void Start(){
-        //TODO change to singleton
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = PlayerSingleton.Instance.gameObject;
 
         playerApproach = player.GetComponent<PlayerApproach>();
         playerAnimation = player.GetComponent<PlayerAnimation>();

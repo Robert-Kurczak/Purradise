@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4513480870979657349}
   - component: {fileID: 2924743085131432882}
   - component: {fileID: 8039440041890680040}
+  - component: {fileID: 8940207604738229596}
   m_Layer: 0
   m_Name: LogDrop
   m_TagString: Untagged
@@ -99,3 +100,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequency: 1
   amplitude: 0.125
+--- !u!114 &8940207604738229596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3524888154284532747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99aa161d341d2734a86c26f2da0dcc86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 5
+  pickupTime: 1

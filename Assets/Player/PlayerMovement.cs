@@ -5,18 +5,16 @@ public class PlayerMovement : MonoBehaviour{
 
 	public PlayerAnimation playerAnimation;
 	public Rigidbody2D rb;
+	public Joystick joystick;
 	Vector2 movement;
 
-	void Update(){
-		movement.x = Input.GetAxisRaw("Horizontal");
-		movement.y = Input.GetAxisRaw("Vertical");
+	void FixedUpdate(){
+		movement.x = joystick.Horizontal;
+		movement.y = joystick.Vertical;
 
 		movement.Normalize();
 
 		playerAnimation.setMovementAnimation(movement);
-	}
-
-	void FixedUpdate(){
 		rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 	}
 }

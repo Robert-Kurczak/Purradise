@@ -139,6 +139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99aa161d341d2734a86c26f2da0dcc86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 38.75
+  range: 5
   pickupTime: 0.3
   item: {fileID: 11400000, guid: 075f28b6945bfd64a91d4d9134f407e1, type: 2}

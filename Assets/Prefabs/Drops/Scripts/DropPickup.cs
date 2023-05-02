@@ -6,7 +6,11 @@ public class DropPickup : MonoBehaviour{
 
 	public Item item;
 	private Vector3 velocity = Vector3.zero;
-	private PlayerInventory playerInventory = PlayerSingleton.Instance.GetComponent<PlayerInventory>();
+	private PlayerInventory playerInventory;
+
+	void Start(){
+		playerInventory = PlayerSingleton.Instance.GetComponent<PlayerInventory>();
+	}
 
 	void Update(){
 		Vector3 playerPosition = PlayerSingleton.Instance.transform.position;

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb57f95d9db6a2c488ddf712fc0394ed, type: 3}
   m_Name: woodLog
   m_EditorClassIdentifier: 
-  name: New item
-  icon: {fileID: 0}
-  amount: 1
+  name: Wood log
+  icon: {fileID: 1085412095, guid: c61f4c160d9f983409b5570469ae6e35, type: 3}
+  maxAmount: 999

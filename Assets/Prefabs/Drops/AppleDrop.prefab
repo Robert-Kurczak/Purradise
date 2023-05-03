@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8039440041890680040}
   - component: {fileID: 8940207604738229596}
   m_Layer: 0
-  m_Name: LogDrop
+  m_Name: AppleDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1085412095, guid: c61f4c160d9f983409b5570469ae6e35, type: 3}
+  m_Sprite: {fileID: 1315446027, guid: df01563e5ac16cb408fa575258cc4488, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,10 +100,10 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.125, y: 0.375}
+  m_Offset: {x: -0.03, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.625, y: 0.125}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -111,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.88, y: 0.88}
+  m_Size: {x: 0.81, y: 0.87}
   m_EdgeRadius: 0
 --- !u!114 &8039440041890680040
 MonoBehaviour:
@@ -141,4 +141,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 5
   pickupTime: 0.3
-  item: {fileID: 11400000, guid: 075f28b6945bfd64a91d4d9134f407e1, type: 2}
+  item: {fileID: 11400000, guid: e9818a89127b5614092f0a530650d1ce, type: 2}

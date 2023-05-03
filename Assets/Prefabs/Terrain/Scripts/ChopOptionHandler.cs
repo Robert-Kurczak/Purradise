@@ -1,45 +1,46 @@
 using UnityEngine;
 
 public class ChopOptionHandler : MonoBehaviour{
-    public float approachDistance = 1;
-    public TreeDestroyer treeDestroyer;
+	public float approachDistance = 1;
+	public TreeDestroyer treeDestroyer;
 
-    private PlayerApproach playerApproach;
-    private PlayerAnimation playerAnimation;
+	private PlayerApproach playerApproach;
+	private PlayerAnimation playerAnimation;
+	private PlayerMovement playerMovement;
 
-    private void choppingEnds(){
-        //Enabling player movement
-        PlayerSingleton.Instance.gameObject.GetComponent<PlayerMovement>().enabled = true;
+	void Start(){
+		GameObject player = PlayerSingleton.Instance.gameObject;
 
-        treeDestroyer.destroy();
-    }
+		playerApproach = player.GetComponent<PlayerApproach>();
+		playerAnimation = player.GetComponent<PlayerAnimation>();
+		playerMovement = player.GetComponent<PlayerMovement>();
+	}
 
-    private void performChopAction(Vector2 direction){
-        //Disabling player movement
-        PlayerSingleton.Instance.gameObject.GetComponent<PlayerMovement>().enabled = false;
+	private void choppingEnds(){
+		//Enabling player movement
+		playerMovement.enabled = true;
+		treeDestroyer.destroy();
+	}
 
-        playerAnimation.OnChoppingEnd += choppingEnds;
+	private void performChopAction(Vector2 direction){
+		//Disabling player movement
+		playerMovement.enabled = false;
 
-        if(direction.x < 0) playerAnimation.chopLeft(5);
-        else                playerAnimation.chopRight(5);
-    }
+		playerAnimation.OnChoppingEnd += choppingEnds;
 
-    //Called by UIButton
-    public void handleClick(){
-        playerApproach.OnReachedTarget += performChopAction;
-        playerApproach.approach(transform.position, approachDistance);
-    }
+		if(direction.x < 0) playerAnimation.chopLeft(5);
+		else                playerAnimation.chopRight(5);
+	}
 
-    void OnDestroy(){
-        //Removing listeners
-        playerAnimation.OnChoppingEnd -= choppingEnds;
-        playerApproach.OnReachedTarget -= performChopAction;
-    }
+	//Called by UIButton
+	public void handleClick(){
+		playerApproach.OnReachedTarget += performChopAction;
+		playerApproach.approach(transform.position, approachDistance);
+	}
 
-    void Start(){
-        GameObject player = PlayerSingleton.Instance.gameObject;
-
-        playerApproach = player.GetComponent<PlayerApproach>();
-        playerAnimation = player.GetComponent<PlayerAnimation>();
-    }
+	void OnDestroy(){
+		//Removing listeners
+		playerAnimation.OnChoppingEnd -= choppingEnds;
+		playerApproach.OnReachedTarget -= performChopAction;
+	}
 }

@@ -403,7 +403,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86cef7444823d4469bc5012efc32087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OptionsCanvas: {fileID: 3790492376100659488}
+  optionsCanvas: {fileID: 0}
+  gatherButton: {fileID: 0}
+  chopButton: {fileID: 0}
 --- !u!114 &5255898336331499031
 MonoBehaviour:
   m_ObjectHideFlags: 0

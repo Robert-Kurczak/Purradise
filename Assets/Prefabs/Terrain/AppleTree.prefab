@@ -115,8 +115,10 @@ GameObject:
   - component: {fileID: 2423963833741091956}
   - component: {fileID: 1685215160473710641}
   - component: {fileID: 6143721293129099041}
-  - component: {fileID: 2230929607918117093}
-  - component: {fileID: 2463562639367761478}
+  - component: {fileID: 5320580772402604560}
+  - component: {fileID: 2386942465678819102}
+  - component: {fileID: 4883715665312536171}
+  - component: {fileID: 9206604851816641187}
   m_Layer: 0
   m_Name: AppleTree
   m_TagString: Untagged
@@ -259,7 +261,27 @@ MonoBehaviour:
   trunk: {fileID: 4568696487554353229, guid: 65ad30b11a254724e807cc0f1c9d8c03, type: 3}
   dropItem: {fileID: 3524888154284532747, guid: 86c474c869b8bfb4cb034d720a7c1af6,
     type: 3}
---- !u!114 &2230929607918117093
+--- !u!114 &5320580772402604560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3151634681310405615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942f11f85e136b94885b1a5a24976d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeSprite: {fileID: -1182469711, guid: df01563e5ac16cb408fa575258cc4488, type: 3}
+  noAppleTreeSprite: {fileID: -1773335772, guid: df01563e5ac16cb408fa575258cc4488,
+    type: 3}
+  dropItem: {fileID: 3524888154284532747, guid: a1422e39cc9a4094dba5e036bb498686,
+    type: 3}
+  spriteRenderer: {fileID: 3875880747516963276}
+  regrowTimeMin: 1
+  regrowTimeMax: 10
+--- !u!114 &2386942465678819102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,8 +293,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86cef7444823d4469bc5012efc32087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OptionsCanvas: {fileID: 1764956258383495526}
---- !u!114 &2463562639367761478
+  optionsCanvas: {fileID: 1764956258383495526}
+  gatherButton: {fileID: 4403323864981413174}
+  chopButton: {fileID: 6870326273664462690}
+--- !u!114 &4883715665312536171
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,6 +310,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   approachDistance: 1
   treeDestroyer: {fileID: 6143721293129099041}
+--- !u!114 &9206604851816641187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3151634681310405615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29f9cde2a7274449a8ce0c6a42956be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  approachDistance: 1
+  optionsToggler: {fileID: 2386942465678819102}
+  appleGatherer: {fileID: 5320580772402604560}
 --- !u!1 &4403323864981413174
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +445,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3157466473832408984}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9206604851816641187}
+        m_TargetAssemblyTypeName: GatherOptionHandler, Assembly-CSharp
+        m_MethodName: handleClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6870326273664462690
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +579,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2463562639367761478}
+      - m_Target: {fileID: 4883715665312536171}
         m_TargetAssemblyTypeName: ChopOptionHandler, Assembly-CSharp
         m_MethodName: handleClick
         m_Mode: 1

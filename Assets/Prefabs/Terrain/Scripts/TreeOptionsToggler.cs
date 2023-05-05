@@ -1,24 +1,11 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class OptionsToggler : MonoBehaviour{
+public class TreeOptionsToggler: MonoBehaviour{
 	public GameObject optionsCanvas;
-	public GameObject gatherButton;
-	public GameObject chopButton;
 
 	private bool ignoreClick;
 
-	public void showGatherButton(){
-		gatherButton.SetActive(true);
-		chopButton.transform.position = optionsCanvas.transform.position + new Vector3(0.5f, 0);
-	}
-
-	public void hideGatherButton(){
-		gatherButton.SetActive(false);
-		chopButton.transform.position = optionsCanvas.transform.position;
-	}
-
-	//TODO fix toggling gather button
 	private void OnMouseDown(){
 		optionsCanvas.SetActive(true);
 		ignoreClick = true;

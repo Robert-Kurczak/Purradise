@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class GatherOptionHandler : MonoBehaviour{
+public class GatherAppleHandler: MonoBehaviour{
 	public float approachDistance = 1;
-	public OptionsToggler optionsToggler;
+	public AppleTreeOptionsToggler optionsToggler;
 	public AppleGatherer appleGatherer;
 
 	private PlayerApproach playerApproach;

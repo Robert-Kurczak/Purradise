@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ChopOptionHandler : MonoBehaviour{
+public class ChopHandler : MonoBehaviour{
 	public float approachDistance = 1;
 	public TreeDestroyer treeDestroyer;
 

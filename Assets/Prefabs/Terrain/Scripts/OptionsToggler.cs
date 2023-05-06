@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TreeOptionsToggler: MonoBehaviour{
+public class OptionsToggler: MonoBehaviour{
 	public GameObject optionsCanvas;
 
 	private bool ignoreClick;

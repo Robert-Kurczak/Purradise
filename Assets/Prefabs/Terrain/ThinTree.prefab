@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: -5747282899671376276}
   - component: {fileID: 8583987740792118292}
   - component: {fileID: 3764470811583116173}
-  - component: {fileID: -9215215110606734285}
   - component: {fileID: 5356807240557121177}
+  - component: {fileID: 8535583220833957576}
   m_Layer: 0
   m_Name: ThinTree
   m_TagString: Untagged
@@ -157,19 +157,7 @@ MonoBehaviour:
   trunk: {fileID: 4568696487554353229, guid: 65ad30b11a254724e807cc0f1c9d8c03, type: 3}
   dropItem: {fileID: 3524888154284532747, guid: 86c474c869b8bfb4cb034d720a7c1af6,
     type: 3}
---- !u!114 &-9215215110606734285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3301551280656726733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d86cef7444823d4469bc5012efc32087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OptionsCanvas: {fileID: 3987768385405158232}
+  dropAmount: 2
 --- !u!114 &5356807240557121177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +172,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   approachDistance: 1
   treeDestroyer: {fileID: 3764470811583116173}
+--- !u!114 &8535583220833957576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3301551280656726733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592d1440f36bb744882078f489c8024b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionsCanvas: {fileID: 3987768385405158232}
 --- !u!1 &3987768385405158232
 GameObject:
   m_ObjectHideFlags: 0

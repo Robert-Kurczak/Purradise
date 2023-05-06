@@ -247,9 +247,8 @@ GameObject:
   - component: {fileID: -8611875868112518505}
   - component: {fileID: 88550674508850182}
   - component: {fileID: -5716601837265700544}
-  - component: {fileID: 1271480341061174317}
   - component: {fileID: 5255898336331499031}
-  - component: {fileID: 514268036368595054}
+  - component: {fileID: 2126767239105007709}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -392,21 +391,6 @@ MonoBehaviour:
   trunk: {fileID: 4568696487554353229, guid: 65ad30b11a254724e807cc0f1c9d8c03, type: 3}
   dropItem: {fileID: 3524888154284532747, guid: 86c474c869b8bfb4cb034d720a7c1af6,
     type: 3}
---- !u!114 &1271480341061174317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5965098688930973626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d86cef7444823d4469bc5012efc32087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  optionsCanvas: {fileID: 0}
-  gatherButton: {fileID: 0}
-  chopButton: {fileID: 0}
 --- !u!114 &5255898336331499031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,7 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   approachDistance: 1
   treeDestroyer: {fileID: -5716601837265700544}
---- !u!114 &514268036368595054
+--- !u!114 &2126767239105007709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -430,7 +414,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5965098688930973626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba25e5445e2372b4db06a7797ba32915, type: 3}
+  m_Script: {fileID: 11500000, guid: 592d1440f36bb744882078f489c8024b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   optionsCanvas: {fileID: 3790492376100659488}

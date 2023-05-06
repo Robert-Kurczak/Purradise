@@ -24,12 +24,10 @@ public class GatherAppleHandler: MonoBehaviour{
 		appleGatherer.gather();
 		optionsToggler.hideGatherButton();
 		appleGatherer.OnApplesRegrow += showGatherButton;
-		playerApproach.OnReachedTarget -= performGatherAction;
 	}
 
 	//Called by UIButton
 	public void handleClick(){
-		playerApproach.OnReachedTarget += performGatherAction;
-		playerApproach.approach(transform.position, approachDistance);
+		playerApproach.approach(transform.position, approachDistance, performGatherAction);
 	}
 }

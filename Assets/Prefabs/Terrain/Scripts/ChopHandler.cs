@@ -34,13 +34,11 @@ public class ChopHandler : MonoBehaviour{
 
 	//Called by UIButton
 	public void handleClick(){
-		playerApproach.OnReachedTarget += performChopAction;
-		playerApproach.approach(transform.position, approachDistance);
+		playerApproach.approach(transform.position, approachDistance, performChopAction);
 	}
 
 	void OnDestroy(){
 		//Removing listeners
 		playerAnimation.OnChoppingEnd -= choppingEnds;
-		playerApproach.OnReachedTarget -= performChopAction;
 	}
 }

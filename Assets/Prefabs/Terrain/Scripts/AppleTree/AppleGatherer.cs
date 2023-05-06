@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AppleGatherer : MonoBehaviour{
@@ -13,6 +12,9 @@ public class AppleGatherer : MonoBehaviour{
     [Space(5)]
 
     [Header("Properties")]
+    public int dropAmountMin = 2;
+    public int dropAmountMax = 5;
+
     public float regrowTimeMin = 300;
     public float regrowTimeMax = 600;
 
@@ -26,7 +28,10 @@ public class AppleGatherer : MonoBehaviour{
 
     public void gather(){
         spriteRenderer.sprite = noAppleTreeSprite;
-        Instantiate(dropItem, transform.position, transform.rotation);
+
+        int dropAmount = UnityEngine.Random.Range(dropAmountMin, dropAmountMax);
+        for(int i = 0; i < dropAmount; i++)
+            Instantiate(dropItem, transform.position, transform.rotation);
 
         float regrowTime = UnityEngine.Random.Range(regrowTimeMin, regrowTimeMax);
         StartCoroutine(regrowCoroutine(regrowTime));

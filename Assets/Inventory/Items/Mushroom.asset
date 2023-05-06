@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb57f95d9db6a2c488ddf712fc0394ed, type: 3}
-  m_Name: WoodLog
+  m_Name: Mushroom
   m_EditorClassIdentifier: 
-  name: Wood log
-  icon: {fileID: 1085412095, guid: c61f4c160d9f983409b5570469ae6e35, type: 3}
+  name: Mushroom
+  icon: {fileID: -1114346528, guid: df01563e5ac16cb408fa575258cc4488, type: 3}
   maxAmount: 32

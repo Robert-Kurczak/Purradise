@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Apple
   icon: {fileID: 1315446027, guid: df01563e5ac16cb408fa575258cc4488, type: 3}
-  maxAmount: 999
+  maxAmount: 32

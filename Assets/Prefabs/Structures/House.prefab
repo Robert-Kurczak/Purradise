@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253577080956719382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: -2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -482,7 +482,7 @@ Tilemap:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -4, y: 0, z: 0}
   m_Size: {x: 7, y: 6, z: 1}
-  m_TileAnchor: {x: 1, y: -2, z: 0}
+  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
     e00: 1
@@ -576,7 +576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2172365300710296844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: -2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1016,7 +1016,7 @@ Tilemap:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -4, y: 0, z: 0}
   m_Size: {x: 7, y: 5, z: 1}
-  m_TileAnchor: {x: 1, y: -2, z: 0}
+  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
     e00: 1
@@ -1096,6 +1096,7 @@ GameObject:
   - component: {fileID: 32829485966604789}
   - component: {fileID: 716399893864332157}
   - component: {fileID: 5787034762274180191}
+  - component: {fileID: -4912196215168911161}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -1151,7 +1152,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1179,3 +1180,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42805fb6d9df0d44b88d59a063d0fcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4912196215168911161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2905981672353839315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dfa6adc17ac5574892b1ae9adcb6bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildColor:
+    serializedVersion: 2
+    rgba: 2936057599
+  materialButtonCanvasTemplate: {fileID: 1216718324663348891, guid: d79824fa50247e044ae42ccd29701ddd,
+    type: 3}
+  materialButtonTemplate: {fileID: 2682425004384400052, guid: 86f5f74e989100f4d8477be9c5034802,
+    type: 3}
+  requiredMaterialsArray:
+  - item: {fileID: 11400000, guid: 075f28b6945bfd64a91d4d9134f407e1, type: 2}
+    amount: 40
+  - item: {fileID: 11400000, guid: c0d9d56793288e34d9651cd2867eb469, type: 2}
+    amount: 30

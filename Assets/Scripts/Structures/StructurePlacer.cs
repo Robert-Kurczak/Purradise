@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
@@ -13,6 +14,8 @@ public class StructurePlacer : MonoBehaviour{
 	private bool placingMode = false;
 	private CollidersCounter collidersCounter;
 	private GameObject instantiatedCanvas;
+	private GameObject confirmButton;
+	private GameObject abortButton;
 	private GameObject instantiatedStructure;
 
 	private void changeColor(Color32 color){
@@ -23,15 +26,22 @@ public class StructurePlacer : MonoBehaviour{
 	}
 
 	private void placeModeOff(){
-		foreach(Transform child in instantiatedStructure.transform){
-			if(child.TryGetComponent<BoxCollider2D>(out BoxCollider2D collider))
-				collider.isTrigger = false;
-		}
+		// foreach(Transform child in instantiatedStructure.transform){
+		// 	if(child.TryGetComponent<BoxCollider2D>(out BoxCollider2D collider))
+		// 		collider.isTrigger = false;
+		// }
+		// placingMode = false;
+
+
+		Destroy(instantiatedStructure.gameObject);
 		placingMode = false;
 	}
 
 	public void placeModeOn(){
-		instantiatedStructure = Instantiate(structure, transform.position, transform.rotation, structuresParent.transform);
+		Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(transform.position);
+		spawnPosition.z = 0;
+
+		instantiatedStructure = Instantiate(structure, spawnPosition, transform.rotation, structuresParent.transform);
 		collidersCounter = instantiatedStructure.GetComponent<CollidersCounter>();
 
 		//---Setting up options canvas---
@@ -43,36 +53,58 @@ public class StructurePlacer : MonoBehaviour{
 
 		instantiatedCanvas = Instantiate(optionsCanvas, optionsPosition, transform.rotation, instantiatedStructure.transform);
 
-		GameObject abortButton = instantiatedCanvas.transform.GetChild(0).gameObject;
-		GameObject confirmButton = instantiatedCanvas.transform.GetChild(1).gameObject;
+		abortButton = instantiatedCanvas.transform.GetChild(0).gameObject;
+		confirmButton = instantiatedCanvas.transform.GetChild(1).gameObject;
 
 		abortButton.GetComponent<Button>().onClick.AddListener(abortPlacing);
 		confirmButton.GetComponent<Button>().onClick.AddListener(placeStructure);
 		//------
 
-		foreach(Transform child in instantiatedStructure.transform){
-			if(child.TryGetComponent<BoxCollider2D>(out BoxCollider2D collider))
-				collider.isTrigger = true;
-		}
+		// foreach(Transform child in instantiatedStructure.transform){
+		// 	if(child.TryGetComponent<BoxCollider2D>(out BoxCollider2D collider))
+		// 		collider.isTrigger = true;
+		// }
+
+		instantiatedStructure.GetComponent<BoxCollider2D>().isTrigger = true;
 		placingMode = true;
 	}
 
 	private void abortPlacing(){
-		Debug.Log("aborting placing");
+		placeModeOff();
 	}
 
 	private void placeStructure(){
-		Debug.Log("placed");
+		Instantiate(
+			structure,
+			instantiatedStructure.transform.position,
+			instantiatedStructure.transform.rotation,
+			structuresParent.transform
+		);
+
+		placeModeOff();
 	}
 
 	void Update(){
 		if(placingMode){
-			if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began){
-				Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
-				instantiatedStructure.transform.position = new Vector3(newPosition.x, newPosition.y, 0);
 
-				if(collidersCounter.isColliding()) changeColor(disallowColor);
-				else changeColor(allowColor);
+			if(collidersCounter.isColliding()){
+				confirmButton.SetActive(false);
+				changeColor(disallowColor);
+			}
+			else{
+				confirmButton.SetActive(true);
+				changeColor(allowColor);
+			}
+
+			if(Input.touchCount > 0){
+				Touch touch = Input.GetTouch(0);
+
+				if(touch.phase != TouchPhase.Ended && !EventSystem.current.IsPointerOverGameObject(touch.fingerId)){
+					Vector3 newPosition = Camera.main.ScreenToWorldPoint(touch.position);
+					newPosition.z = 0;
+
+					instantiatedStructure.transform.position = newPosition;
+				}
 			}
 		}
 	}

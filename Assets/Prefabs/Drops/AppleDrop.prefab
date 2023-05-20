@@ -122,7 +122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3524888154284532747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a1c95bc06011664e914889ba89e7d39, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d5f9b3acd9fca2439c9a08cfb45d3a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   frequency: 1
@@ -136,9 +136,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3524888154284532747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99aa161d341d2734a86c26f2da0dcc86, type: 3}
+  m_Script: {fileID: 11500000, guid: c236dec40d16931498d82f074f38e296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
-  pickupTime: 0.3
+  pickupTime: 0.2
   item: {fileID: 11400000, guid: e9818a89127b5614092f0a530650d1ce, type: 2}

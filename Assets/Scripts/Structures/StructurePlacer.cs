@@ -26,13 +26,6 @@ public class StructurePlacer : MonoBehaviour{
 	}
 
 	private void placeModeOff(){
-		// foreach(Transform child in instantiatedStructure.transform){
-		// 	if(child.TryGetComponent<BoxCollider2D>(out BoxCollider2D collider))
-		// 		collider.isTrigger = false;
-		// }
-		// placingMode = false;
-
-
 		Destroy(instantiatedStructure.gameObject);
 		placingMode = false;
 	}
@@ -60,11 +53,6 @@ public class StructurePlacer : MonoBehaviour{
 		confirmButton.GetComponent<Button>().onClick.AddListener(placeStructure);
 		//------
 
-		// foreach(Transform child in instantiatedStructure.transform){
-		// 	if(child.TryGetComponent<BoxCollider2D>(out BoxCollider2D collider))
-		// 		collider.isTrigger = true;
-		// }
-
 		instantiatedStructure.GetComponent<BoxCollider2D>().isTrigger = true;
 		placingMode = true;
 	}
@@ -74,12 +62,17 @@ public class StructurePlacer : MonoBehaviour{
 	}
 
 	private void placeStructure(){
-		Instantiate(
+		GameObject instance = Instantiate(
 			structure,
 			instantiatedStructure.transform.position,
 			instantiatedStructure.transform.rotation,
 			structuresParent.transform
 		);
+
+		//If object have StructureBuilder initialize building process
+		if(instance.TryGetComponent<StructureBuilder>(out StructureBuilder builder)){
+			builder.initialize();
+		}
 
 		placeModeOff();
 	}

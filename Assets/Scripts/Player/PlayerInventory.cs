@@ -14,14 +14,18 @@ public class PlayerInventory : MonoBehaviour{
 		OnInventoryChange?.Invoke();
 	}
 
-	public void removeItem(Item item, int amount = 1){
+	public bool removeItem(Item item, int amount = 1){
 		if(inventory.ContainsKey(item)){
 			inventory[item] -= amount;
 
 			if(inventory[item] <= 0) inventory.Remove(item);
 
 			OnInventoryChange?.Invoke();
+
+			return true;
 		}
+
+		return false;
 	}
 
 	public int getAmount(Item item){

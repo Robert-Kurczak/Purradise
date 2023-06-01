@@ -1201,6 +1201,6 @@ MonoBehaviour:
     type: 3}
   requiredMaterialsArray:
   - item: {fileID: 11400000, guid: 075f28b6945bfd64a91d4d9134f407e1, type: 2}
-    amount: 40
+    amount: 2
   - item: {fileID: 11400000, guid: c0d9d56793288e34d9651cd2867eb469, type: 2}
-    amount: 30
+    amount: 2
